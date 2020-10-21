@@ -13,16 +13,16 @@ android {
     }
 }
 
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
     kotlinOptions {
         jvmTarget = "1.8"
     }
 }
 
 apollo {
-    generateApolloMetadata.set(true)
-    generateKotlinModels.set(true)
-    alwaysGenerateTypesMatching.set(emptyList())
+    generateApolloMetadata = true
+    generateKotlinModels = true
+    alwaysGenerateTypesMatching = []
 }
 
 dependencies {
